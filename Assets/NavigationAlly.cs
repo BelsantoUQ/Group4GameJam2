@@ -5,17 +5,18 @@ using UnityEngine.AI;
 
 public class NavigationAlly : MonoBehaviour
 {
-    [SerializeField] private Transform player;
+    private Transform powerUp;
     private NavMeshAgent agent;
     // Start is called before the first frame update
     void Start()
     {
+        powerUp = GameObject.FindGameObjectWithTag("Powerup").transform;
         agent = GetComponent<NavMeshAgent>();
     }
     
     // Update is called once per frame
     void Update()
     {
-        agent.destination = player.position;
+        agent.destination = powerUp.position;
     }
 }
