@@ -4,12 +4,19 @@ using UnityEngine;
 
 public class TurretController : MonoBehaviour
 {
-    public float rotationSpeed = 5.0f; // Velocidad de rotación de la torreta
-    public float minRotation = 0.0f;   // Rotación mínima permitida (en grados)
-    public float maxRotation = 160.0f; // Rotación máxima permitida (en grados)
-    public BulletDirection bulletDirectionScript; // Referencia al script bulletDirection
+    [SerializeField]
+    private float rotationSpeed = 5.0f; // Velocidad de rotación de la torreta
+    [SerializeField]
+    private float minRotation = 0.0f;   // Rotación mínima permitida (en grados)
+    [SerializeField]
+    private float maxRotation = 160.0f; // Rotación máxima permitida (en grados)
+
+    [SerializeField] private GameObject bulletsPosition;
+    [SerializeField] private GameObject bullets;
 
     private bool isMouseDown = false;
+    private float timeSinceLastShot = 0.0f;
+    private float shotCooldown = 0.5f; // Tiempo de espera entre disparos
 
     void Update()
     {
@@ -48,8 +55,11 @@ public class TurretController : MonoBehaviour
         float clampedYRotation = Mathf.Clamp(transform.eulerAngles.y, minRotation, maxRotation);
         transform.eulerAngles = new Vector3(0, clampedYRotation, 0);
 
+        // Actualiza el tiempo transcurrido desde el último disparo
+        timeSinceLastShot += Time.deltaTime;
+
         // Detecta el clic del mouse
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && timeSinceLastShot >= shotCooldown)
         {
             isMouseDown = true;
         }
@@ -58,19 +68,11 @@ public class TurretController : MonoBehaviour
             isMouseDown = false;
         }
 
-        // Si se mantiene presionado el clic del mouse, envía la rotación al script bulletDirection
-        if (isMouseDown)
+        // Si se mantiene presionado el clic del mouse y ha pasado el tiempo de espera, realiza el disparo
+        if (isMouseDown && timeSinceLastShot >= shotCooldown)
         {
-            bulletDirectionScript.SetRotationY(transform.eulerAngles.y+10);
-            bulletDirectionScript.gameObject.SetActive(true);
-            StartCoroutine(DeactivateAfterDelay(.5f));
+            Instantiate(bullets, bulletsPosition.transform.position, bulletsPosition.transform.rotation);
+            timeSinceLastShot = 0.0f; // Reinicia el contador de tiempo
         }
-    }
-    
-    
-    private IEnumerator DeactivateAfterDelay(float delay)
-    {
-        yield return new WaitForSeconds(delay);
-        bulletDirectionScript.gameObject.SetActive(false);
     }
 }

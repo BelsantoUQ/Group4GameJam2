@@ -3209,8 +3209,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6240179256706340774}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.7071067, y: 5.302452e-33, z: 5.3024508e-33, w: 0.7071068}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalRotation: {x: -0.6973976, y: -0.11677578, z: -0.11677578, w: 0.6973976}
+  m_LocalPosition: {x: 0.00000008693643, y: 0, z: 0.00000003920464}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3230,7 +3230,7 @@ Transform:
   - {fileID: 3269517442849777932}
   - {fileID: 2980451254413659897}
   m_Father: {fileID: 1415343368492508959}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: -19.011}
 --- !u!1 &6251144685372173798
 GameObject:
   m_ObjectHideFlags: 0
@@ -3336,9 +3336,11 @@ GameObject:
   - component: {fileID: 1415343368492508959}
   - component: {fileID: 8650327959473907514}
   - component: {fileID: 3386070870812736731}
+  - component: {fileID: 6655676369874160266}
+  - component: {fileID: 8019060072999865675}
   m_Layer: 0
   m_Name: CrabMonster
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3353,7 +3355,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 10, y: 10, z: 10}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1868009681250387690}
@@ -3395,6 +3397,39 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 8650327959473907514}
+--- !u!65 &6655676369874160266
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6506328022087006827}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2.64, y: 2.16, z: 2.88}
+  m_Center: {x: -0.14, y: 1.7, z: 0.03}
+--- !u!114 &8019060072999865675
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6506328022087006827}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4fcfb59c0e55a764ab239581289c93df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6556806277680098227
 GameObject:
   m_ObjectHideFlags: 0
@@ -4515,7 +4550,7 @@ GameObject:
   - component: {fileID: 996255908363461950}
   m_Layer: 0
   m_Name: Rikayon
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4529,7 +4564,7 @@ Transform:
   m_GameObject: {fileID: 9200013261616425775}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

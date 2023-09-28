@@ -9,6 +9,7 @@ public class NavigationAlly : MonoBehaviour
     private NavMeshAgent agent;
     private Vector3 destination;
     private Vector3 originalPosition;
+    
     // Start is called before the first frame update
     private void Start()
     {
