@@ -3765,7 +3765,7 @@ ParticleSystem:
       serializedVersion: 2
       m_Bits: 4294967295
     maxCollisionShapes: 256
-    quality: 2
+    quality: 1
     voxelSize: 0.5
     collisionMessages: 1
     collidesWithDynamic: 1
@@ -8582,7 +8582,7 @@ ParticleSystem:
       serializedVersion: 2
       m_Bits: 4294967295
     maxCollisionShapes: 256
-    quality: 2
+    quality: 1
     voxelSize: 0.5
     collisionMessages: 1
     collidesWithDynamic: 1
@@ -9645,7 +9645,7 @@ GameObject:
   - component: {fileID: 5798076349583130272}
   - component: {fileID: 5873026103886819271}
   m_Layer: 0
-  m_Name: BulletPack
+  m_Name: BulletsShot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9659,7 +9659,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3668153448304192810}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.000000017315655, y: 0.7071068, z: 0.000000017315655, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: -54.45217, y: 10.615709, z: 14.288223}
   m_LocalScale: {x: 8, y: 8, z: 8}
   m_ConstrainProportionsScale: 1
@@ -9669,7 +9669,7 @@ Transform:
   - {fileID: 1954650768013396068}
   - {fileID: 3744922038876137558}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!114 &5873026103886819271
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13447,7 +13447,7 @@ ParticleSystem:
       serializedVersion: 2
       m_Bits: 4294967295
     maxCollisionShapes: 256
-    quality: 2
+    quality: 1
     voxelSize: 0.5
     collisionMessages: 1
     collidesWithDynamic: 1
@@ -18264,7 +18264,7 @@ ParticleSystem:
       serializedVersion: 2
       m_Bits: 4294967295
     maxCollisionShapes: 256
-    quality: 2
+    quality: 1
     voxelSize: 0.5
     collisionMessages: 1
     collidesWithDynamic: 1

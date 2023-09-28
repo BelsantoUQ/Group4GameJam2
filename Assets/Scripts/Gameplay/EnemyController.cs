@@ -6,7 +6,6 @@ using UnityEngine;
 public class EnemyController : MonoBehaviour
 {
     [SerializeField] private float moveSpeed = 3.0f;
-    [SerializeField] private float attackDistance = 2.0f; // Distancia a la que el enemigo atacará
     [SerializeField] private Animator animator;
     
     private Transform mainTurret;
@@ -42,7 +41,7 @@ public class EnemyController : MonoBehaviour
         {
             animator.SetTrigger("Attack_1");
             hiting = true;
-            StartCoroutine(DeactivateAfterDelay(0.8f)); // Desactivar después de 0.2 segundos
+            StartCoroutine(DeactivateAfterDelay(1.2f)); // Desactivar después de 0.2 segundos
         }
     }
     
