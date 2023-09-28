@@ -1,6 +1,10 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Prefabs/Bullets.meta
 guid: 024b58fe082befd4499d803a93de5cac
 folderAsset: yes
+========
+guid: a4715a45f12ef434caefd52545451ef1
+>>>>>>>> LizBranch:Assets/Scenes/Restart.unity.meta
 DefaultImporter:
   externalObjects: {}
   userData: 
