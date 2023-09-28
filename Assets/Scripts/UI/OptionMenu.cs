@@ -6,6 +6,7 @@ using UnityEngine.Audio;
 public class OptionMenu : MonoBehaviour
 {
     [SerializeField] private AudioMixer audioMixer;
+    public AudioClip music;
 
     public void ChangeVolume(float volume)
     {
