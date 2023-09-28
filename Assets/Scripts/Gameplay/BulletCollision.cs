@@ -14,6 +14,7 @@ public class BulletCollision : MonoBehaviour
             EnemyController enemigo = other.GetComponent<EnemyController>();
             if (enemigo != null)
             {
+                
                 Debug.Log("PAW"); // Suponiendo que el enemigo tiene un método para recibir daño
             }
         }
