@@ -17,6 +17,8 @@ public class EnemyHitBox : MonoBehaviour
         if (other.gameObject.CompareTag("Ally"))
         {
             Debug.Log("Ally Catch");
+            enemyMovement.GetComponent<EnemyMovemnt>().ChangeTarget(other.gameObject);
+            other.gameObject.GetComponent<NavigationAlly>().SetDeath(enemyMovement);
         }
     }
     
