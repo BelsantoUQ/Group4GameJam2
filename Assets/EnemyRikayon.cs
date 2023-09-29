@@ -33,7 +33,7 @@ public class EnemyRikayon : MonoBehaviour
                     animator.SetTrigger("Walk_Cycle_" + move);
                 }
                 isRunning = true;
-                StartCoroutine(DeactivateMoveAfterDelay(.8f)); // Desactivar después de 0.2 segundos
+                StartCoroutine(DeactivateMoveAfterDelay(1.2f)); // Desactivar después de 0.2 segundos
             }
         }
     }
