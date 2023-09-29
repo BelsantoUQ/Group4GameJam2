@@ -10,6 +10,7 @@ public class NavigationAlly : MonoBehaviour
     private Vector3 destination;
     private Vector3 originalPosition;
     private bool isMovingToPowerUp;
+    private bool isMovingToDie;
     [SerializeField] private Animator animator;
     
     // Start is called before the first frame update
@@ -19,6 +20,7 @@ public class NavigationAlly : MonoBehaviour
         originalPosition = transform.position;
         destination = originalPosition;
         isMovingToPowerUp = false;
+        isMovingToDie = false;
     }
     
     // Update is called once per frame
@@ -47,11 +49,37 @@ public class NavigationAlly : MonoBehaviour
         {
             StartCoroutine(MoveToPowerUp());
         }
+        if (other.CompareTag("Enemy") && isMovingToDie)
+        {
+            StartCoroutine(DestroyAfterDelay());
+        }
+    }
+    
+    private void OnCollisionEnter(Collision other)
+    {
+        Debug.Log("Colision");
+        if (other.gameObject.CompareTag("Enemy") && isMovingToDie)
+        {
+            //llamar animacion de muerte aquiZ
+            StartCoroutine(DestroyAfterDelay());
+        }
+    }
+
+    private IEnumerator DestroyAfterDelay()
+    {
+        yield return new WaitForSeconds(1.3f); // Esperar 2 segundos
+        Destroy(gameObject);
     }
 
     private IEnumerator MoveToPowerUp()
     {
         yield return new WaitForSeconds(2f); // Esperar 2 segundos
         destination = originalPosition;
+    }
+
+    public void SetDeath(GameObject enemy)
+    {
+        isMovingToDie = true;
+        destination = enemy.transform.position;
     }
 }
