@@ -37,6 +37,10 @@ public class GameManager : MonoBehaviour
     private void ChangeLifeText()
     {
         lifeText.text = "Turrets Life Points: " + lifePoints;
+        if (lifePoints<1)
+        {
+            //invocar la pantalla de gameOver
+        }
     }
 
     public void ChangeAllyText(int allies)
