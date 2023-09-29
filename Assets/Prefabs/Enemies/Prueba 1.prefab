@@ -2164,7 +2164,7 @@ GameObject:
   - component: {fileID: 6850376541278485097}
   - component: {fileID: 4086248878782997513}
   m_Layer: 0
-  m_Name: Prueba
+  m_Name: Prueba 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2180,8 +2180,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0.008132021, y: -0.67172533, z: -0.0073745707, w: 0.74071896}
   m_LocalPosition: {x: 144.04404, y: -1.007851, z: 121.202446}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.75, y: 0.75, z: 0.75}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 826810202768979468}
   - {fileID: 7936807382889700693}
@@ -2199,7 +2199,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d73a5e71e0f120469a1eb9ab5f7b455, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 3
+  moveSpeed: 5
   rikayon: {fileID: 7466198301007277220}
 --- !u!1 &4828808618677527125
 GameObject:
@@ -4434,7 +4434,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: e061968e56112fe4ca8c0ad3347c2a0d, type: 2}
+  - {fileID: 2100000, guid: 68bd5c12b41e5834e9670bf065f52258, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
