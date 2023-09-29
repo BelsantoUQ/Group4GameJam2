@@ -9,6 +9,8 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] 
     private TextMeshProUGUI lifeText;
+    [SerializeField] 
+    private TextMeshProUGUI allyText;
     
     private float lifePoints;
     
@@ -17,6 +19,7 @@ public class GameManager : MonoBehaviour
     {
         lifePoints = 100;
         ChangeLifeText();
+        ChangeAllyText(FindObjectsOfType<NavigationAlly>().Length);
     }
 
 
@@ -34,6 +37,16 @@ public class GameManager : MonoBehaviour
     private void ChangeLifeText()
     {
         lifeText.text = "Turrets Life Points: " + lifePoints;
+        if (lifePoints<1)
+        {
+            //invocar la pantalla de gameOver
+        }
+    }
+
+    public void ChangeAllyText(int allies)
+    {
+//        Debug.Log("Allies : "+allies);
+        allyText.text = "Allies : " + allies;
     }
     
 }
