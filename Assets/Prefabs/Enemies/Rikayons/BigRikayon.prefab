@@ -3190,6 +3190,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyMovement: {fileID: 4817788208926137893}
+  ally: {fileID: 0}
 --- !u!1 &6379551807563361780
 GameObject:
   m_ObjectHideFlags: 0

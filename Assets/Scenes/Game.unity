@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.50175965, g: 0.27028084, b: 0.21009675, a: 1}
+  m_IndirectSpecularColor: {r: 0.5015748, g: 0.27015787, b: 0.21001217, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -123,6 +123,63 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1001 &89944425
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3757733997661161821, guid: 950acbaaea0fe51428110458d5a91bd8, type: 3}
+      propertyPath: m_Name
+      value: PUs
+      objectReference: {fileID: 0}
+    - target: {fileID: 7230478110969642736, guid: 950acbaaea0fe51428110458d5a91bd8, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 506.11362
+      objectReference: {fileID: 0}
+    - target: {fileID: 7230478110969642736, guid: 950acbaaea0fe51428110458d5a91bd8, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 25.774399
+      objectReference: {fileID: 0}
+    - target: {fileID: 7230478110969642736, guid: 950acbaaea0fe51428110458d5a91bd8, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 478.69247
+      objectReference: {fileID: 0}
+    - target: {fileID: 7230478110969642736, guid: 950acbaaea0fe51428110458d5a91bd8, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7230478110969642736, guid: 950acbaaea0fe51428110458d5a91bd8, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7230478110969642736, guid: 950acbaaea0fe51428110458d5a91bd8, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7230478110969642736, guid: 950acbaaea0fe51428110458d5a91bd8, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7230478110969642736, guid: 950acbaaea0fe51428110458d5a91bd8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7230478110969642736, guid: 950acbaaea0fe51428110458d5a91bd8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7230478110969642736, guid: 950acbaaea0fe51428110458d5a91bd8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 950acbaaea0fe51428110458d5a91bd8, type: 3}
 --- !u!1001 &334170494
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -137,7 +194,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3221724070128798743, guid: 10bb7a2f10e3b8443a7558c71ae815a7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 526.7
+      value: 530.94
       objectReference: {fileID: 0}
     - target: {fileID: 3221724070128798743, guid: 10bb7a2f10e3b8443a7558c71ae815a7, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1167,9 +1224,17 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6927192031837505295, guid: 0b343228667fe2940b8b50f19ffe7002, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -57.000366
+      objectReference: {fileID: 0}
     - target: {fileID: 7203281438197044479, guid: 0b343228667fe2940b8b50f19ffe7002, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7610238865560767404, guid: 0b343228667fe2940b8b50f19ffe7002, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 115.98389
       objectReference: {fileID: 0}
     - target: {fileID: 7750121167106223949, guid: 0b343228667fe2940b8b50f19ffe7002, type: 3}
       propertyPath: m_AnchorMax.x
@@ -1439,3 +1504,4 @@ SceneRoots:
   - {fileID: 991095009}
   - {fileID: 578073245}
   - {fileID: 571745135}
+  - {fileID: 89944425}
