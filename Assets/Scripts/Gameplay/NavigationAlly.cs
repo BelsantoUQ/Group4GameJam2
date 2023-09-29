@@ -16,6 +16,7 @@ public class NavigationAlly : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
+        animator = GetComponent<Animator>();
         agent = GetComponent<NavMeshAgent>();
         originalPosition = transform.position;
         destination = originalPosition;
@@ -33,6 +34,7 @@ public class NavigationAlly : MonoBehaviour
             isMovingToPowerUp = true;
             powerUp = GameObject.FindGameObjectWithTag("Powerup").transform;
             destination = powerUp.position;
+            animator.SetBool("Running", true);
         }
         if (isMovingToPowerUp)
         {
@@ -60,7 +62,7 @@ public class NavigationAlly : MonoBehaviour
         Debug.Log("Colision");
         if (other.gameObject.CompareTag("Enemy") && isMovingToDie)
         {
-            //llamar animacion de muerte aquiZ
+            animator.SetBool("Death", true);
             StartCoroutine(DestroyAfterDelay());
         }
     }
