@@ -2162,9 +2162,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6850376541278485097}
-  - component: {fileID: 4876092529674619060}
+  - component: {fileID: 4086248878782997513}
   m_Layer: 0
-  m_Name: Prueba
+  m_Name: JrRikayon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2178,16 +2178,16 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4817788208926137893}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.00813378, y: -0.67172635, z: -0.0073761875, w: 0.74071807}
+  m_LocalRotation: {x: -0.008132021, y: -0.67172533, z: -0.0073745707, w: 0.74071896}
   m_LocalPosition: {x: 144.04404, y: -1.007851, z: 121.202446}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.75, y: 0.75, z: 0.75}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 826810202768979468}
   - {fileID: 7936807382889700693}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4876092529674619060
+  m_LocalEulerAnglesHint: {x: -1.258, y: -84.407, z: 0}
+--- !u!114 &4086248878782997513
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2196,11 +2196,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 4817788208926137893}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4fcfb59c0e55a764ab239581289c93df, type: 3}
+  m_Script: {fileID: 11500000, guid: 1d73a5e71e0f120469a1eb9ab5f7b455, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 3
-  animator: {fileID: 4411276891037210426}
+  moveSpeed: 8
+  attackPosition: 509
+  rikayon: {fileID: 7466198301007277220}
+  running: 1
+  lifePoints: 120
 --- !u!1 &4828808618677527125
 GameObject:
   m_ObjectHideFlags: 0
@@ -3129,11 +3132,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7936807382889700693}
-  - component: {fileID: 752312757752993740}
-  - component: {fileID: 6529145341744721195}
   - component: {fileID: 7054936739939594896}
+  - component: {fileID: 7487414174790922902}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: HitBox
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3148,62 +3150,12 @@ Transform:
   m_GameObject: {fileID: 6357449600752925960}
   serializedVersion: 2
   m_LocalRotation: {x: -0.0000000046566138, y: 0.72353345, z: 0.015892016, w: 0.69010633}
-  m_LocalPosition: {x: 0.3, y: 16.1, z: 9.2}
+  m_LocalPosition: {x: 1.5, y: 16.1, z: 8.4}
   m_LocalScale: {x: 1, y: 17.9, z: 32.38}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6850376541278485097}
   m_LocalEulerAnglesHint: {x: -1.318, y: 92.695, z: 1.257}
---- !u!33 &752312757752993740
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6357449600752925960}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &6529145341744721195
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6357449600752925960}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!65 &7054936739939594896
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3225,6 +3177,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &7487414174790922902
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6357449600752925960}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd2d9895c0f61544e8b877ef29593fb6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyMovement: {fileID: 4817788208926137893}
 --- !u!1 &6379551807563361780
 GameObject:
   m_ObjectHideFlags: 0
@@ -4117,6 +4082,7 @@ GameObject:
   - component: {fileID: 826810202768979468}
   - component: {fileID: 4411276891037210426}
   - component: {fileID: 2363047108032392720}
+  - component: {fileID: 2511511036395481891}
   m_Layer: 0
   m_Name: CrabMonster (1)
   m_TagString: Enemy
@@ -4190,6 +4156,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &2511511036395481891
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7466198301007277220}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a9590cd27ea4fa498751155ae7f27e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 4411276891037210426}
 --- !u!1 &7482697625375987699
 GameObject:
   m_ObjectHideFlags: 0
@@ -4472,7 +4451,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: e061968e56112fe4ca8c0ad3347c2a0d, type: 2}
+  - {fileID: 2100000, guid: 68bd5c12b41e5834e9670bf065f52258, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
