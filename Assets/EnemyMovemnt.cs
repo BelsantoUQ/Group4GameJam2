@@ -30,6 +30,10 @@ public class EnemyMovemnt : MonoBehaviour
     {
         if (lifePoints>0 && !isAttacking && transform.position.x > attackPosition)
         {
+            if (target == null)
+            {
+                target = mainTurret;
+            }
             // Calcula la dirección hacia la MainTurret
             Vector3 moveDirection = (target.position - transform.position).normalized;
 

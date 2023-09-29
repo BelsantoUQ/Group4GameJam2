@@ -5,8 +5,7 @@ using UnityEngine;
 public class EnemyHitBox : MonoBehaviour
 {
     [SerializeField] private GameObject enemyMovement;
-    [SerializeField] private GameObject ally;
-
+    private GameManager _gameManager;
     public void SetDamage(float multiplicator)
     {
         enemyMovement.GetComponent<EnemyMovemnt>().SetDamage(multiplicator);
@@ -16,7 +15,9 @@ public class EnemyHitBox : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Ally"))
         {
+            _gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
             Debug.Log("Ally Catch");
+            _gameManager.ChangeAllyText(FindObjectsOfType<NavigationAlly>().Length-1);
             enemyMovement.GetComponent<EnemyMovemnt>().ChangeTarget(other.gameObject);
             other.gameObject.GetComponent<NavigationAlly>().SetDeath(enemyMovement);
         }
