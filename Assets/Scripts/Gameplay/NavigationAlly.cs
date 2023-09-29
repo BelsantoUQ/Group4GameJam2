@@ -9,20 +9,36 @@ public class NavigationAlly : MonoBehaviour
     private NavMeshAgent agent;
     private Vector3 destination;
     private Vector3 originalPosition;
+    private bool isMovingToPowerUp;
+    [SerializeField] private Animator animator;
     
     // Start is called before the first frame update
     private void Start()
     {
-        powerUp = GameObject.FindGameObjectWithTag("Powerup").transform;
         agent = GetComponent<NavMeshAgent>();
-        destination = powerUp.position;
         originalPosition = transform.position;
+        destination = originalPosition;
+        isMovingToPowerUp = false;
     }
     
     // Update is called once per frame
     private void Update()
     {
+        
         agent.destination = destination;
+        if (Input.GetMouseButtonDown(1) && !isMovingToPowerUp) // Verificar si se presionó el botón derecho del mouse
+        {
+            isMovingToPowerUp = true;
+            powerUp = GameObject.FindGameObjectWithTag("Powerup").transform;
+            destination = powerUp.position;
+        }
+        if (isMovingToPowerUp)
+        {
+            if (agent.remainingDistance <= agent.stoppingDistance)
+            {
+                isMovingToPowerUp = false;
+            }
+        }
     }
     
     private void OnTriggerEnter(Collider other)
@@ -36,7 +52,6 @@ public class NavigationAlly : MonoBehaviour
     private IEnumerator MoveToPowerUp()
     {
         yield return new WaitForSeconds(2f); // Esperar 2 segundos
-
         destination = originalPosition;
     }
 }

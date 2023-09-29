@@ -22,7 +22,7 @@ public class BulletCollision : MonoBehaviour
             EnemyHitBox enemy = other.GetComponent<EnemyHitBox>();
             if (enemy != null)
             {
-                Debug.Log("PAW"); // Suponiendo que el enemigo tiene un método para recibir daño
+//                Debug.Log("PAW"); // Suponiendo que el enemigo tiene un método para recibir daño
                 enemy.SetDamage(multiplicatorDamage);
             }
         }

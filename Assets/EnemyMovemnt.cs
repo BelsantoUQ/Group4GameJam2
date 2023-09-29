@@ -9,7 +9,7 @@ public class EnemyMovemnt : MonoBehaviour
     [SerializeField] private float attackPosition = 123f;
     [SerializeField] private GameObject rikayon;
     [SerializeField] private bool running;
-    private float lifePoints;
+    [SerializeField] private float lifePoints;
     private float auxSpeed;
     private Transform mainTurret;
     private bool isAttacking = false;
@@ -41,7 +41,7 @@ public class EnemyMovemnt : MonoBehaviour
         {
             rikayon.GetComponent<EnemyRikayon>().SetAttack(true);
             moveSpeed = 0;
-            Debug.Log("Start Attack");
+            //Debug.Log("Start Attack");
             isAttacking = true;
         }
     }
@@ -66,7 +66,7 @@ public class EnemyMovemnt : MonoBehaviour
     private IEnumerator ReturnStateAfterDelay(float delay)
     {
         yield return new WaitForSeconds(delay);
-        Debug.Log("Speed: "+auxSpeed);
+       // Debug.Log("Speed: "+auxSpeed);
         moveSpeed = auxSpeed;
     }
     private IEnumerator DestroyAfterDelay(float delay)

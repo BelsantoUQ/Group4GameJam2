@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class EnemyRikayon : MonoBehaviour
 {
@@ -9,7 +11,13 @@ public class EnemyRikayon : MonoBehaviour
     private bool isAttacking = false;
     private bool isRunning = false;
     private int move = 2;
-    
+    private GameManager _gameManager;
+
+    private void Start()
+    {
+        _gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -59,6 +67,7 @@ public class EnemyRikayon : MonoBehaviour
     private IEnumerator DeactivateHitAfterDelay(float delay)
     {
         yield return new WaitForSeconds(delay);
+        _gameManager.SetLifePoint(-10);
         hiting = false;
     }
 
