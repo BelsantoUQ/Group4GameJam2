@@ -56,15 +56,9 @@ public class NavigationAlly : MonoBehaviour
         isAbleToMove = order == FindObjectsOfType<NavigationAlly>().Length;
         if (isAbleToMove)
         {
-            isMovingToPowerUp = true;
-            powerUp = GameObject.FindGameObjectWithTag("Powerup").transform;
-            destination = powerUp.position;
-            animator.SetBool("Running", true);
-        }
-        if (isMovingToPowerUp)
-        {
-            if (agent.remainingDistance <= agent.stoppingDistance)
+            if (Input.GetMouseButtonDown(1) && !isMovingToPowerUp) // Verificar si se presionó el botón derecho del mouse
             {
+                animator.SetBool("Running", true);
                 isMovingToPowerUp = true;
                 powerUp = GameObject.FindGameObjectWithTag("Powerup").transform;
                 destination = powerUp.position;
