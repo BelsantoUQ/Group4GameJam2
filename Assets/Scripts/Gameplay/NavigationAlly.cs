@@ -23,6 +23,7 @@ public class NavigationAlly : MonoBehaviour
     private void Start()
     {
         SetPosition();
+        animator = GetComponent<Animator>();
         agent = GetComponent<NavMeshAgent>();
         originalPosition = transform.position;
         destination = originalPosition;
@@ -55,7 +56,14 @@ public class NavigationAlly : MonoBehaviour
         isAbleToMove = order == FindObjectsOfType<NavigationAlly>().Length;
         if (isAbleToMove)
         {
-            if (Input.GetMouseButtonDown(1) && !isMovingToPowerUp) // Verificar si se presionó el botón derecho del mouse
+            isMovingToPowerUp = true;
+            powerUp = GameObject.FindGameObjectWithTag("Powerup").transform;
+            destination = powerUp.position;
+            animator.SetBool("Running", true);
+        }
+        if (isMovingToPowerUp)
+        {
+            if (agent.remainingDistance <= agent.stoppingDistance)
             {
                 isMovingToPowerUp = true;
                 powerUp = GameObject.FindGameObjectWithTag("Powerup").transform;
@@ -89,8 +97,7 @@ public class NavigationAlly : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Enemy") && isMovingToDie)
         {
-            Debug.Log("Colision");
-            //llamar animacion de muerte aquiZ
+            animator.SetBool("Death", true);
             StartCoroutine(DestroyAfterDelay());
         }
     }
