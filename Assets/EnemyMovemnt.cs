@@ -12,7 +12,9 @@ public class EnemyMovemnt : MonoBehaviour
     [SerializeField] private float lifePoints;
     private float auxSpeed;
     private Transform mainTurret;
+    private Transform target;
     private bool isAttacking = false;
+    private bool isAllyCatched = false;
     
 
     private void Start()
@@ -21,6 +23,7 @@ public class EnemyMovemnt : MonoBehaviour
         mainTurret = GameObject.Find("MainTurret").transform;
         rikayon.GetComponent<EnemyRikayon>().SetRunning(running);
         auxSpeed = moveSpeed;
+        target = mainTurret;
     }
 
     private void Update()
@@ -28,10 +31,10 @@ public class EnemyMovemnt : MonoBehaviour
         if (lifePoints>0 && !isAttacking && transform.position.x > attackPosition)
         {
             // Calcula la dirección hacia la MainTurret
-            Vector3 moveDirection = (mainTurret.position - transform.position).normalized;
+            Vector3 moveDirection = (target.position - transform.position).normalized;
 
             // Rota hacia la dirección del movimiento
-            transform.LookAt(mainTurret);
+            transform.LookAt(target);
 
             // Mueve al enemigo hacia la MainTurret
             transform.position += moveDirection * moveSpeed * Time.deltaTime;
@@ -83,5 +86,25 @@ public class EnemyMovemnt : MonoBehaviour
     public void SetAttacking(bool active)
     {
         isAttacking = active;
+    }
+
+    public void ChangeTarget(GameObject newTarget)
+    {
+        target = isAllyCatched ? mainTurret : newTarget.transform;
+        StartCoroutine(AttackAllyDelay(.5f)); 
+    }
+    
+    private IEnumerator AttackAllyDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        isAttacking = true;
+        StartCoroutine(DestroyAfterAttackDelay(1.2f)); 
+    }
+    private IEnumerator DestroyAfterAttackDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        isAttacking = false;
+        lifePoints = 0;
+        SetDamage(1);
     }
 }
