@@ -92,6 +92,7 @@ public class NavigationAlly : MonoBehaviour
         }
         if (other.CompareTag("Enemy") && isMovingToDie)
         {
+            animator.SetBool("Death", true);
             Debug.Log("Be Destoy");
             StartCoroutine(DestroyAfterDelay());
         }

@@ -3,50 +3,51 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.SocialPlatforms.Impl;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
 
     [SerializeField] 
-    private TextMeshProUGUI lifeText;
-    [SerializeField] 
     private TextMeshProUGUI allyText;
     
     private float lifePoints;
+
+    public Slider lifeScore;
+
     
-    // Start is called before the first frame update
     void Start()
     {
         lifePoints = 100;
-        ChangeLifeText();
+        ChangeLife();
         ChangeAllyText(FindObjectsOfType<NavigationAlly>().Length);
     }
-
 
     public float GetLifePoint()
     {
         return lifePoints;
     }
-
+    
     public void SetLifePoint(float rest)
     {
         lifePoints +=rest;
-        ChangeLifeText();
+        ChangeLife();
     }
-
-    private void ChangeLifeText()
+    
+    private void ChangeLife()
     {
-        lifeText.text = "Turrets Life Points: " + lifePoints;
-        if (lifePoints<1)
+        lifeScore.value = lifePoints;
+        if (lifePoints < 1)
         {
-            //invocar la pantalla de gameOver
+            SceneManager.LoadScene("Restart");
         }
     }
 
     public void ChangeAllyText(int allies)
     {
 //        Debug.Log("Allies : "+allies);
-        allyText.text = "Allies : " + allies;
+        allyText.text = "" + allies;
     }
-    
+
 }
