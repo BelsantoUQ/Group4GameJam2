@@ -1,7 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using Random = UnityEngine.Random;
 
 public class NavigationAlly : MonoBehaviour
 {
@@ -17,6 +19,7 @@ public class NavigationAlly : MonoBehaviour
     
     [SerializeField] private Animator animator;
     [SerializeField] private Animator presidentAnimator;
+    [SerializeField] private GameObject explosion;
     private int order;
     private enum AllyOptions { MisterOne, MisterTwo, MisterTree, MisterFour}
     [SerializeField]
@@ -118,10 +121,16 @@ public class NavigationAlly : MonoBehaviour
                 }
             }
 //            Debug.Log("Position Agent"+transform.position.x);
-            if (isMovingToDie && enemyTarget.transform)
+            try
             {
-                isMovingToDie = false;
-                destination = originalPosition;
+                if (isMovingToDie && enemyTarget.transform)
+                {
+                    StartCoroutine(AnimateDeath());
+                }
+            }
+            catch (MissingReferenceException e)
+            {
+                Destroy(gameObject);
             }
         }
     }
@@ -164,6 +173,7 @@ public class NavigationAlly : MonoBehaviour
         yield return new WaitForSeconds(.5f); // Esperar 2 segundos
         DeactiveAnimations();
         animator.SetBool("Death"+Random.Range(1,3), true);
+        explosion.SetActive(true);
         StartCoroutine(DestroyAfterDelay());
     }
     
@@ -172,7 +182,7 @@ public class NavigationAlly : MonoBehaviour
         yield return new WaitForSeconds(.8f); // Esperar 2 segundos
         _gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
 //        Debug.Log("Ally Catch");
-        _gameManager.ChangeAllyText(FindObjectsOfType<NavigationAlly>().Length-1);
+        _gameManager.ChangeAllyText(order-1);
         Destroy(gameObject);
     }
 
