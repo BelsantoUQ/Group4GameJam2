@@ -44,6 +44,11 @@ public class EnemyRikayon : MonoBehaviour
                 StartCoroutine(DeactivateMoveAfterDelay(1.2f)); // Desactivar después de 0.2 segundos
             }
         }
+
+        if (!isAttacking && move == 0)
+        {
+            move = 2;
+        }
     }
     
     private void Attack()

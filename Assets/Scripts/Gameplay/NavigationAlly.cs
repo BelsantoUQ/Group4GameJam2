@@ -20,6 +20,7 @@ public class NavigationAlly : MonoBehaviour
     private enum AllyOptions { MisterOne, MisterTwo, MisterTree, MisterFour}
     [SerializeField]
     private AllyOptions selectedAlly;
+    private GameManager _gameManager;
     
     // Start is called before the first frame update
     private void Start()
@@ -77,8 +78,9 @@ public class NavigationAlly : MonoBehaviour
 //            Debug.Log("Position Agent"+transform.position.x);
         }
 
-        if (isMovingToDie && enemyTarget)
+        if (isMovingToDie && !enemyTarget)
         {
+            isMovingToDie = false;
             destination = originalPosition;
         }
         
@@ -110,6 +112,9 @@ public class NavigationAlly : MonoBehaviour
     private IEnumerator DestroyAfterDelay()
     {
         yield return new WaitForSeconds(1.3f); // Esperar 2 segundos
+        _gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
+//        Debug.Log("Ally Catch");
+        _gameManager.ChangeAllyText(FindObjectsOfType<NavigationAlly>().Length-1);
         Destroy(gameObject);
     }
 
@@ -124,7 +129,7 @@ public class NavigationAlly : MonoBehaviour
     {
         isMovingToDie = true;
         enemyTarget = enemy;
-        Debug.Log("Ally will Die");
+//        Debug.Log("Ally will Die");
         destination = enemy.transform.position;
     }
 }
