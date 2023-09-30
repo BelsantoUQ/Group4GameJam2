@@ -16,6 +16,7 @@ public class NavigationAlly : MonoBehaviour
     private GameObject enemyTarget;
     
     [SerializeField] private Animator animator;
+    [SerializeField] private Animator presidentAnimator;
     private int order;
     private enum AllyOptions { MisterOne, MisterTwo, MisterTree, MisterFour}
     [SerializeField]
@@ -33,8 +34,44 @@ public class NavigationAlly : MonoBehaviour
         isMovingToPowerUp = false;
         isMovingToDie = false;
         powerUpCatched = false;
+        SetIdle();
     }
 
+    public void SetIdle()
+    {
+        DeactiveAnimations();
+        animator.SetBool("Combat"+Random.Range(1,3), true);
+    }
+
+    public void DeactiveAnimations()
+    {
+        // Obtén todos los parámetros del Animator
+        AnimatorControllerParameter[] parameters = animator.parameters;
+
+        // Recorre los parámetros y establece los booleanos en falso
+        foreach (AnimatorControllerParameter parameter in parameters)
+        {
+            if (parameter.type == AnimatorControllerParameterType.Bool)
+            {
+                animator.SetBool(parameter.name, false);
+            }
+        }
+    }
+
+    public void DeactivePresidentAnimations()
+    {
+        // Obtén todos los parámetros del Animator
+        AnimatorControllerParameter[] parameters = presidentAnimator.parameters;
+
+        // Recorre los parámetros y establece los booleanos en falso
+        foreach (AnimatorControllerParameter parameter in parameters)
+        {
+            if (parameter.type == AnimatorControllerParameterType.Bool)
+            {
+                presidentAnimator.SetBool(parameter.name, false);
+            }
+        }
+    }
     private void SetPosition()
     {
         switch (selectedAlly)
@@ -62,6 +99,10 @@ public class NavigationAlly : MonoBehaviour
         {
             if (Input.GetMouseButtonDown(1) && !isMovingToPowerUp) // Verificar si se presionó el botón derecho del mouse
             {
+                DeactiveAnimations();
+                DeactivePresidentAnimations();
+                presidentAnimator.SetBool("Order", true);
+                StartCoroutine(PresidentAnimation());
                 animator.SetBool("Running", true);
                 isMovingToPowerUp = true;
                 powerUp = GameObject.FindGameObjectWithTag("Powerup").transform;
@@ -73,30 +114,38 @@ public class NavigationAlly : MonoBehaviour
                 {
                     isMovingToPowerUp = false;
                     powerUpCatched = false;
+                    SetIdle();
                 }
             }
 //            Debug.Log("Position Agent"+transform.position.x);
+            if (isMovingToDie && enemyTarget.transform)
+            {
+                isMovingToDie = false;
+                destination = originalPosition;
+            }
         }
-
-        if (isMovingToDie && !enemyTarget)
-        {
-            isMovingToDie = false;
-            destination = originalPosition;
-        }
-        
     }
-    
+    private IEnumerator PresidentAnimation()
+    {
+        yield return new WaitForSeconds(.8f); // Esperar 2 segundos
+        DeactivePresidentAnimations();
+        presidentAnimator.SetBool("RestIdle"+Random.Range(1,3), true);
+    }
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Powerup"))
         {
+            DeactiveAnimations();
+            animator.SetBool("Pick"+Random.Range(1,3), true);
+            DeactivePresidentAnimations();
+            presidentAnimator.SetBool("Talk", true);
             StartCoroutine(MoveToBase());
         }
         if (other.CompareTag("Enemy") && isMovingToDie)
         {
-            animator.SetBool("Death", true);
-            Debug.Log("Be Destoy");
-            StartCoroutine(DestroyAfterDelay());
+            DeactiveAnimations();
+            animator.SetBool("Kami", true);
+            StartCoroutine(AnimateDeath());
         }
     }
     
@@ -104,14 +153,23 @@ public class NavigationAlly : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Enemy") && isMovingToDie)
         {
-            animator.SetBool("Death", true);
-            StartCoroutine(DestroyAfterDelay());
+            DeactiveAnimations();
+            animator.SetBool("Kami", true);
+            StartCoroutine(AnimateDeath());
         }
     }
 
+    private IEnumerator AnimateDeath()
+    {
+        yield return new WaitForSeconds(.5f); // Esperar 2 segundos
+        DeactiveAnimations();
+        animator.SetBool("Death"+Random.Range(1,3), true);
+        StartCoroutine(DestroyAfterDelay());
+    }
+    
     private IEnumerator DestroyAfterDelay()
     {
-        yield return new WaitForSeconds(1.3f); // Esperar 2 segundos
+        yield return new WaitForSeconds(.8f); // Esperar 2 segundos
         _gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
 //        Debug.Log("Ally Catch");
         _gameManager.ChangeAllyText(FindObjectsOfType<NavigationAlly>().Length-1);
@@ -121,6 +179,10 @@ public class NavigationAlly : MonoBehaviour
     private IEnumerator MoveToBase()
     {
         yield return new WaitForSeconds(2f); // Esperar 2 segundos
+        DeactiveAnimations();
+        DeactivePresidentAnimations();
+        presidentAnimator.SetBool("RestIdle"+Random.Range(1,3), true);
+        animator.SetBool("Running", true);
         powerUpCatched = true;
         destination = originalPosition;
     }
