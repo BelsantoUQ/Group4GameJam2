@@ -10,6 +10,7 @@ public class EnemyMovemnt : MonoBehaviour
     [SerializeField] private GameObject rikayon;
     [SerializeField] private bool running;
     [SerializeField] private float lifePoints;
+    [SerializeField] private GameObject explosion;
     private float auxSpeed;
     private Transform mainTurret;
     private Transform target;
@@ -60,7 +61,8 @@ public class EnemyMovemnt : MonoBehaviour
         if (lifePoints<1)
         {
             rikayon.GetComponent<EnemyRikayon>().SetDie();
-            StartCoroutine(DestroyAfterDelay(1.2f)); 
+            explosion.SetActive(true);
+            StartCoroutine(DestroyAfterDelay(.8f)); 
         }
         else
         {
