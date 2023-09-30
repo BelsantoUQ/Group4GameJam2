@@ -10,8 +10,10 @@ public class NavigationAlly : MonoBehaviour
     private Vector3 destination;
     private Vector3 originalPosition;
     private bool isMovingToPowerUp;
+    private bool powerUpCatched;
     private bool isMovingToDie;
     private bool isAbleToMove;
+    private GameObject enemyTarget;
     
     [SerializeField] private Animator animator;
     private int order;
@@ -29,6 +31,7 @@ public class NavigationAlly : MonoBehaviour
         destination = originalPosition;
         isMovingToPowerUp = false;
         isMovingToDie = false;
+        powerUpCatched = false;
     }
 
     private void SetPosition()
@@ -63,13 +66,20 @@ public class NavigationAlly : MonoBehaviour
                 powerUp = GameObject.FindGameObjectWithTag("Powerup").transform;
                 destination = powerUp.position;
             }
-            if (isMovingToPowerUp)
+            if (isMovingToPowerUp && powerUpCatched)
             {
-                if (agent.remainingDistance <= agent.stoppingDistance)
+                if (transform.position.x <= 499)
                 {
                     isMovingToPowerUp = false;
+                    powerUpCatched = false;
                 }
             }
+//            Debug.Log("Position Agent"+transform.position.x);
+        }
+
+        if (isMovingToDie && enemyTarget)
+        {
+            destination = originalPosition;
         }
         
     }
@@ -78,7 +88,7 @@ public class NavigationAlly : MonoBehaviour
     {
         if (other.CompareTag("Powerup"))
         {
-            StartCoroutine(MoveToPowerUp());
+            StartCoroutine(MoveToBase());
         }
         if (other.CompareTag("Enemy") && isMovingToDie)
         {
@@ -102,15 +112,17 @@ public class NavigationAlly : MonoBehaviour
         Destroy(gameObject);
     }
 
-    private IEnumerator MoveToPowerUp()
+    private IEnumerator MoveToBase()
     {
         yield return new WaitForSeconds(2f); // Esperar 2 segundos
+        powerUpCatched = true;
         destination = originalPosition;
     }
 
     public void SetDeath(GameObject enemy)
     {
         isMovingToDie = true;
+        enemyTarget = enemy;
         Debug.Log("Ally will Die");
         destination = enemy.transform.position;
     }
