@@ -16,13 +16,23 @@ public class GameManager : MonoBehaviour
 
     public Slider lifeScore;
 
-    private BloodEffect bloodEffect;
-    
+    public Image bloodEffect;
+
+    private float r;
+    private float g;
+    private float b;
+    private float a;
+
     void Start()
     {
         lifePoints = 100;
         ChangeLife();
         ChangeAllyText(FindObjectsOfType<NavigationAlly>().Length);
+
+        r = bloodEffect.color.r;
+        g = bloodEffect.color.g;
+        b = bloodEffect.color.b;
+        a = bloodEffect.color.a;
     }
 
     public float GetLifePoint()
@@ -34,11 +44,16 @@ public class GameManager : MonoBehaviour
     {
         lifePoints +=rest;
         ChangeLife();
+
+        a += 0.01f;
+        a = Mathf.Clamp(a, 0, 1f);
+        ChangeColor();
     }
 
     private void ChangeLife()
     {
         lifeScore.value = lifePoints;
+
         if (lifePoints < 1)
         {
             SceneManager.LoadScene("Restart");
@@ -49,6 +64,12 @@ public class GameManager : MonoBehaviour
     {
 //        Debug.Log("Allies : "+allies);
         allyText.text = "" + allies;
+    }
+
+    public void ChangeColor()
+    {
+        Color c = new Color(r, g, b);
+        bloodEffect.color = c;
     }
 
 }
