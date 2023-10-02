@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
 
     public Slider lifeScore;
 
+    private BloodEffect bloodEffect;
     
     void Start()
     {
@@ -34,7 +35,7 @@ public class GameManager : MonoBehaviour
         lifePoints +=rest;
         ChangeLife();
     }
-    
+
     private void ChangeLife()
     {
         lifeScore.value = lifePoints;
