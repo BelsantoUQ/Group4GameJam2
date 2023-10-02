@@ -426,6 +426,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   allyText: {fileID: 1794341438}
   lifeScore: {fileID: 447589422}
+  bloodEffect: {fileID: 844919683}
 --- !u!4 &571745135
 Transform:
   m_ObjectHideFlags: 0
@@ -603,6 +604,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b33d27d7c2bc9104d9f0ab2c8055547a, type: 3}
+--- !u!114 &844919683 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4961211451793149000, guid: 0b343228667fe2940b8b50f19ffe7002, type: 3}
+  m_PrefabInstance: {fileID: 4839864476513617873}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &861147061 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 187175037106426918, guid: fb0d837952cce9f49b8d9033d2b17088, type: 3}
@@ -1771,6 +1783,10 @@ PrefabInstance:
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1962122830}
+    - target: {fileID: 4961211451793149000, guid: 0b343228667fe2940b8b50f19ffe7002, type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5210241709588366016, guid: 0b343228667fe2940b8b50f19ffe7002, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -1779,6 +1795,26 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 1962122833}
+    - target: {fileID: 8220267828876946986, guid: 0b343228667fe2940b8b50f19ffe7002, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 18.117401
+      objectReference: {fileID: 0}
+    - target: {fileID: 8220267828876946986, guid: 0b343228667fe2940b8b50f19ffe7002, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 9.792129
+      objectReference: {fileID: 0}
+    - target: {fileID: 8220267828876946986, guid: 0b343228667fe2940b8b50f19ffe7002, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 9.792129
+      objectReference: {fileID: 0}
+    - target: {fileID: 8220267828876946986, guid: 0b343228667fe2940b8b50f19ffe7002, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8220267828876946986, guid: 0b343228667fe2940b8b50f19ffe7002, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 27
+      objectReference: {fileID: 0}
     - target: {fileID: 8742964791108854426, guid: 0b343228667fe2940b8b50f19ffe7002, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
