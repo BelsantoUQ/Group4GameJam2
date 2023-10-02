@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.501734, g: 0.2702746, b: 0.21019381, a: 1}
+  m_IndirectSpecularColor: {r: 0.45895427, g: 0.25204802, b: 0.20354936, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -783,6 +783,10 @@ PrefabInstance:
       propertyPath: minRotation
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 6870411330447945991, guid: e5c586fe4631afd4bb258c2c0e8b4294, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 24300002, guid: 2f8a3ddacdfed874dbcaa474bc8c8b1e, type: 2}
     - target: {fileID: 8508735686652705635, guid: e5c586fe4631afd4bb258c2c0e8b4294, type: 3}
       propertyPath: m_LocalPosition.x
       value: 484.5
@@ -831,6 +835,10 @@ PrefabInstance:
       propertyPath: Priority
       value: 109
       objectReference: {fileID: 0}
+    - target: {fileID: 9008363705990184969, guid: e5c586fe4631afd4bb258c2c0e8b4294, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 24300002, guid: 2f8a3ddacdfed874dbcaa474bc8c8b1e, type: 2}
     - target: {fileID: 9008363705990184969, guid: e5c586fe4631afd4bb258c2c0e8b4294, type: 3}
       propertyPath: rolloffCustomCurve.m_Curve.Array.data[4].time
       value: 0.05206531
@@ -1540,16 +1548,28 @@ PrefabInstance:
       value: PauseMenu
       objectReference: {fileID: 0}
     - target: {fileID: 1345472477162904271, guid: c3f7f7821ae3caa4887c09c4bd4123dd, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1345472477162904271, guid: c3f7f7821ae3caa4887c09c4bd4123dd, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1345472477162904271, guid: c3f7f7821ae3caa4887c09c4bd4123dd, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1345472477162904271, guid: c3f7f7821ae3caa4887c09c4bd4123dd, type: 3}
       propertyPath: m_LocalPosition.x
       value: 432.63464
       objectReference: {fileID: 0}
     - target: {fileID: 1345472477162904271, guid: c3f7f7821ae3caa4887c09c4bd4123dd, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 230.8295
+      value: 230.82953
       objectReference: {fileID: 0}
     - target: {fileID: 1345472477162904271, guid: c3f7f7821ae3caa4887c09c4bd4123dd, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -2.0736868
+      value: -2.0736866
       objectReference: {fileID: 0}
     - target: {fileID: 1345472477162904271, guid: c3f7f7821ae3caa4887c09c4bd4123dd, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1557,15 +1577,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1345472477162904271, guid: c3f7f7821ae3caa4887c09c4bd4123dd, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 1345472477162904271, guid: c3f7f7821ae3caa4887c09c4bd4123dd, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 1345472477162904271, guid: c3f7f7821ae3caa4887c09c4bd4123dd, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 1345472477162904271, guid: c3f7f7821ae3caa4887c09c4bd4123dd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1776,7 +1796,7 @@ PrefabInstance:
     - target: {fileID: 4715891976107796051, guid: ce3fe501ee185d542aa1ace8fed598c6, type: 3}
       propertyPath: m_audioClip
       value: 
-      objectReference: {fileID: 8300000, guid: 37c9133889e2bfc4296ead93a281acc2, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 5239527841027734637, guid: ce3fe501ee185d542aa1ace8fed598c6, type: 3}
       propertyPath: m_audioClip
       value: 
@@ -1789,7 +1809,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Audio
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 419677094868383567, guid: ce3fe501ee185d542aa1ace8fed598c6, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
