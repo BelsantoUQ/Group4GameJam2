@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.45895427, g: 0.25204802, b: 0.20354936, a: 1}
+  m_IndirectSpecularColor: {r: 0.4589656, g: 0.25205866, b: 0.2035583, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -275,63 +275,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2483606490772857033, guid: b33d27d7c2bc9104d9f0ab2c8055547a, type: 3}
   m_PrefabInstance: {fileID: 1342201233}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &334170494
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 2881754368475535021, guid: 10bb7a2f10e3b8443a7558c71ae815a7, type: 3}
-      propertyPath: m_Name
-      value: PrototypePowerUp
-      objectReference: {fileID: 0}
-    - target: {fileID: 3221724070128798743, guid: 10bb7a2f10e3b8443a7558c71ae815a7, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 526.7
-      objectReference: {fileID: 0}
-    - target: {fileID: 3221724070128798743, guid: 10bb7a2f10e3b8443a7558c71ae815a7, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.0013275146
-      objectReference: {fileID: 0}
-    - target: {fileID: 3221724070128798743, guid: 10bb7a2f10e3b8443a7558c71ae815a7, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 532.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 3221724070128798743, guid: 10bb7a2f10e3b8443a7558c71ae815a7, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3221724070128798743, guid: 10bb7a2f10e3b8443a7558c71ae815a7, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3221724070128798743, guid: 10bb7a2f10e3b8443a7558c71ae815a7, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3221724070128798743, guid: 10bb7a2f10e3b8443a7558c71ae815a7, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3221724070128798743, guid: 10bb7a2f10e3b8443a7558c71ae815a7, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3221724070128798743, guid: 10bb7a2f10e3b8443a7558c71ae815a7, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3221724070128798743, guid: 10bb7a2f10e3b8443a7558c71ae815a7, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 10bb7a2f10e3b8443a7558c71ae815a7, type: 3}
 --- !u!4 &446319078 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2483606490772857033, guid: b33d27d7c2bc9104d9f0ab2c8055547a, type: 3}
@@ -898,6 +841,11 @@ MonoBehaviour:
   spawnRangeZMin: 400
   spawnRangeZMax: 600
   timeForNextWave: 1.8
+  powerUps:
+  - {fileID: 2881754368475535021, guid: 10bb7a2f10e3b8443a7558c71ae815a7, type: 3}
+  - {fileID: 4344436306171312047, guid: ba32510b8cab24742a341ca83db6204a, type: 3}
+  - {fileID: 7960922184496811420, guid: 2a64b6f56d5f2f74a80ba40f42539750, type: 3}
+  - {fileID: 4361128330919985175, guid: bad6bc3036eff714b903d062f1d004dc, type: 3}
 --- !u!4 &991095009
 Transform:
   m_ObjectHideFlags: 0
@@ -923,67 +871,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2483606490772857033, guid: b33d27d7c2bc9104d9f0ab2c8055547a, type: 3}
   m_PrefabInstance: {fileID: 8716992525042082113}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &1240209089
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 2483606490772857033, guid: b33d27d7c2bc9104d9f0ab2c8055547a, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 517.53754
-      objectReference: {fileID: 0}
-    - target: {fileID: 2483606490772857033, guid: b33d27d7c2bc9104d9f0ab2c8055547a, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.0013275146
-      objectReference: {fileID: 0}
-    - target: {fileID: 2483606490772857033, guid: b33d27d7c2bc9104d9f0ab2c8055547a, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 473.67706
-      objectReference: {fileID: 0}
-    - target: {fileID: 2483606490772857033, guid: b33d27d7c2bc9104d9f0ab2c8055547a, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2483606490772857033, guid: b33d27d7c2bc9104d9f0ab2c8055547a, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2483606490772857033, guid: b33d27d7c2bc9104d9f0ab2c8055547a, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2483606490772857033, guid: b33d27d7c2bc9104d9f0ab2c8055547a, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2483606490772857033, guid: b33d27d7c2bc9104d9f0ab2c8055547a, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2483606490772857033, guid: b33d27d7c2bc9104d9f0ab2c8055547a, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2483606490772857033, guid: b33d27d7c2bc9104d9f0ab2c8055547a, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2483606490772857036, guid: b33d27d7c2bc9104d9f0ab2c8055547a, type: 3}
-      propertyPath: m_Name
-      value: SmokeyExplosion Variant
-      objectReference: {fileID: 0}
-    - target: {fileID: 2483606490772857038, guid: b33d27d7c2bc9104d9f0ab2c8055547a, type: 3}
-      propertyPath: looping
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: b33d27d7c2bc9104d9f0ab2c8055547a, type: 3}
 --- !u!1 &1243789713
 GameObject:
   m_ObjectHideFlags: 0
@@ -2274,9 +2161,7 @@ SceneRoots:
   - {fileID: 1243789716}
   - {fileID: 8385990755616793208}
   - {fileID: 900873292}
-  - {fileID: 334170494}
   - {fileID: 991095009}
   - {fileID: 578073245}
   - {fileID: 571745135}
   - {fileID: 8476258}
-  - {fileID: 1240209089}
