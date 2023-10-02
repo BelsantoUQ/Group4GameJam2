@@ -31,6 +31,7 @@ public class HitBox : MonoBehaviour
             enemyMovement.GetComponent<EnemyMovemnt>().SetSpeed(0f);
             // El enemigo está lo suficientemente cerca para atacar
             enemyMovement.GetComponent<EnemyMovemnt>().SetAttacking(true);
+            //
             rikayon.GetComponent<EnemyRikayon>().SetAttack(true);
         }
     }
