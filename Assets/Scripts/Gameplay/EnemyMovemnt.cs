@@ -14,6 +14,7 @@ public class EnemyMovemnt : MonoBehaviour
     private float auxSpeed;
     private Transform mainTurret;
     private Transform target;
+    private GameObject humanTarget;
     private bool isAttacking = false;
     private bool isAllyCatched = false;
     
@@ -96,6 +97,7 @@ public class EnemyMovemnt : MonoBehaviour
 
     public void ChangeTarget(GameObject newTarget)
     {
+        humanTarget = newTarget;
         target = isAllyCatched ? mainTurret : newTarget.transform;
         StartCoroutine(AttackAllyDelay(.5f)); 
     }
@@ -103,9 +105,21 @@ public class EnemyMovemnt : MonoBehaviour
     private IEnumerator AttackAllyDelay(float delay)
     {
         yield return new WaitForSeconds(delay);
+    
+        // Verificar si humanTarget es nulo antes de intentar acceder a él
         isAttacking = true;
-        StartCoroutine(DestroyAfterAttackDelay(1.2f)); 
+        if (humanTarget != null)
+        {
+            NavigationAlly navigationAlly = humanTarget.GetComponent<NavigationAlly>();
+            // Verificar si navigationAlly es nulo antes de intentar llamar a KillThisHuman
+            if (navigationAlly != null)
+            {
+                navigationAlly.KillThisHuman();
+            }
+        }
+        StartCoroutine(DestroyAfterAttackDelay(1.5f));
     }
+
     private IEnumerator DestroyAfterAttackDelay(float delay)
     {
         yield return new WaitForSeconds(delay);

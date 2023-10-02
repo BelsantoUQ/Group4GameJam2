@@ -15,6 +15,7 @@ public class NavigationAlly : MonoBehaviour
     private bool powerUpCatched;
     private bool isMovingToDie;
     private bool isAbleToMove;
+    private bool secondTouch;
     private GameObject enemyTarget;
     
     [SerializeField] private Animator animator;
@@ -29,6 +30,7 @@ public class NavigationAlly : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
+        secondTouch = false;
         SetPosition();
         animator = GetComponent<Animator>();
         agent = GetComponent<NavMeshAgent>();
@@ -121,17 +123,7 @@ public class NavigationAlly : MonoBehaviour
                 }
             }
 //            Debug.Log("Position Agent"+transform.position.x);
-            try
-            {
-                if (isMovingToDie && enemyTarget.transform)
-                {
-                    Debug.Log("ERROR DESCONOCIDO LINEA 128 NavigationAlly.cs");
-                }
-            }
-            catch (MissingReferenceException e)
-            {
-                StartCoroutine(AnimateDeath());
-            }
+            
         }
     }
     private IEnumerator PresidentAnimation()
@@ -150,36 +142,21 @@ public class NavigationAlly : MonoBehaviour
             presidentAnimator.SetBool("Talk", true);
             StartCoroutine(MoveToBase());
         }
-        if (other.CompareTag("Enemy") && isMovingToDie)
-        {
-            DeactiveAnimations();
-            animator.SetBool("Kami", true);
-            StartCoroutine(AnimateDeath());
-        }
-    }
-    
-    private void OnCollisionEnter(Collision other)
-    {
-        if (other.gameObject.CompareTag("Enemy") && isMovingToDie)
-        {
-            DeactiveAnimations();
-            animator.SetBool("Kami", true);
-            StartCoroutine(AnimateDeath());
-        }
     }
 
-    private IEnumerator AnimateDeath()
+    public void KillThisHuman()
     {
-        yield return new WaitForSeconds(.5f); // Esperar 2 segundos
         DeactiveAnimations();
+        agent.destination = transform.position;
         animator.SetBool("Death"+Random.Range(1,3), true);
+//        Debug.Log("Animacion de muerte");
         explosion.SetActive(true);
         StartCoroutine(DestroyAfterDelay());
     }
     
     private IEnumerator DestroyAfterDelay()
     {
-        yield return new WaitForSeconds(.8f); // Esperar 2 segundos
+        yield return new WaitForSeconds(1.7f); // Esperar 2 segundos
         _gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
 //        Debug.Log("Ally Catch");
         _gameManager.ChangeAllyText(order-1);
@@ -202,6 +179,7 @@ public class NavigationAlly : MonoBehaviour
         isMovingToDie = true;
         enemyTarget = enemy;
 //        Debug.Log("Ally will Die");
-        destination = enemy.transform.position;
+        Vector3 newTarget = enemy.transform.position;
+        destination = newTarget;
     }
 }
