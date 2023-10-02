@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.501759, g: 0.27028093, b: 0.21009672, a: 1}
+  m_IndirectSpecularColor: {r: 0.45572233, g: 0.2513695, b: 0.20344129, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -783,6 +783,10 @@ PrefabInstance:
       propertyPath: minRotation
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 6870411330447945991, guid: e5c586fe4631afd4bb258c2c0e8b4294, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 24300002, guid: 2f8a3ddacdfed874dbcaa474bc8c8b1e, type: 2}
     - target: {fileID: 8508735686652705635, guid: e5c586fe4631afd4bb258c2c0e8b4294, type: 3}
       propertyPath: m_LocalPosition.x
       value: 484.5
@@ -831,6 +835,10 @@ PrefabInstance:
       propertyPath: Priority
       value: 109
       objectReference: {fileID: 0}
+    - target: {fileID: 9008363705990184969, guid: e5c586fe4631afd4bb258c2c0e8b4294, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 24300002, guid: 2f8a3ddacdfed874dbcaa474bc8c8b1e, type: 2}
     - target: {fileID: 9008363705990184969, guid: e5c586fe4631afd4bb258c2c0e8b4294, type: 3}
       propertyPath: rolloffCustomCurve.m_Curve.Array.data[4].time
       value: 0.05206531
@@ -1063,7 +1071,7 @@ AudioSource:
   m_GameObject: {fileID: 1296227087}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 2f8a3ddacdfed874dbcaa474bc8c8b1e, type: 2}
   m_audioClip: {fileID: 8300000, guid: 434255a455bb6114b89536ca11d81805, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.467
@@ -1462,13 +1470,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1874535871}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.53777933, y: -0.23360668, z: -0.25060534, w: 0.77033657}
+  m_LocalRotation: {x: 0.54519767, y: -0.20271462, z: -0.2298917, w: 0.7802667}
   m_LocalPosition: {x: 278, y: -1201, z: 843}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 45.354, y: -63.601, z: -65.09}
+  m_LocalEulerAnglesHint: {x: 49.253, y: -60.307, z: -62.656}
 --- !u!4 &1958515336 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2483606490772857033, guid: b33d27d7c2bc9104d9f0ab2c8055547a, type: 3}
@@ -1774,9 +1782,13 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4715891976107796051, guid: ce3fe501ee185d542aa1ace8fed598c6, type: 3}
+      propertyPath: m_Volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4715891976107796051, guid: ce3fe501ee185d542aa1ace8fed598c6, type: 3}
       propertyPath: m_audioClip
       value: 
-      objectReference: {fileID: 8300000, guid: 37c9133889e2bfc4296ead93a281acc2, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 5239527841027734637, guid: ce3fe501ee185d542aa1ace8fed598c6, type: 3}
       propertyPath: m_audioClip
       value: 
