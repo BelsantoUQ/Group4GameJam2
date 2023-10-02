@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4787182124721260453, guid: df7503a6ae8e06943939cc5f3c84d64e, type: 3}
       propertyPath: m_Name
-      value: mortar_001 Variant
+      value: PrototypePowerUp
       objectReference: {fileID: 0}
     - target: {fileID: 4787182124721260453, guid: df7503a6ae8e06943939cc5f3c84d64e, type: 3}
       propertyPath: m_TagString
@@ -79,6 +79,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4787182124721260453, guid: df7503a6ae8e06943939cc5f3c84d64e, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2526995122295873818}
+    - targetCorrespondingSourceObject: {fileID: 4787182124721260453, guid: df7503a6ae8e06943939cc5f3c84d64e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8874982667364255539}
   m_SourcePrefab: {fileID: 100100000, guid: df7503a6ae8e06943939cc5f3c84d64e, type: 3}
 --- !u!1 &2881754368475535021 stripped
 GameObject:
@@ -106,3 +109,15 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.7047346, y: 1.1213186, z: 1.2335615}
   m_Center: {x: -0.00041279197, y: 0.5582584, z: -0.07595554}
+--- !u!114 &8874982667364255539
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2881754368475535021}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c92bd1297a946a542b9915e0afcf216f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

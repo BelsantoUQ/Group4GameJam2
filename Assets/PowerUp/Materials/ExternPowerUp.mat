@@ -29,7 +29,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _MainTex:
         m_Texture: {fileID: 2800000, guid: a4249f3354abefe4b8c773a81a76c2ee, type: 3}
-        m_Scale: {x: 1, y: 1}
+        m_Scale: {x: 4.83, y: 18.8}
         m_Offset: {x: 0, y: 0}
     - _ParallaxMap:
         m_Texture: {fileID: 0}
@@ -37,7 +37,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _InvFade: 0.36
+    - _InvFade: 0.01
     - _Parallax: 0.02
     - _Shininess: 0.078125
     m_Colors:
