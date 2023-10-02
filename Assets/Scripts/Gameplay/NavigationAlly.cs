@@ -125,7 +125,7 @@ public class NavigationAlly : MonoBehaviour
             {
                 if (isMovingToDie && enemyTarget.transform)
                 {
-                    
+                    Debug.Log("ERROR DESCONOCIDO LINEA 128 NavigationAlly.cs");
                 }
             }
             catch (MissingReferenceException e)
