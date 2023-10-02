@@ -125,12 +125,12 @@ public class NavigationAlly : MonoBehaviour
             {
                 if (isMovingToDie && enemyTarget.transform)
                 {
-                    StartCoroutine(AnimateDeath());
+                    
                 }
             }
             catch (MissingReferenceException e)
             {
-                Destroy(gameObject);
+                StartCoroutine(AnimateDeath());
             }
         }
     }
