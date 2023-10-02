@@ -6,10 +6,18 @@ using UnityEngine;
 public class BulletCollision : MonoBehaviour
 {
     [SerializeField] private float multiplicatorDamage = 1f;
+    private GameManager _gameManager;
+    private int powerImpact;
+    private void Start()
+    {
+        powerImpact = 1;
+        _gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
+    }
 
     private void Update()
     {
         //llama al game manager para validar el tipo de impacto en los poweups adquiridos
+        powerImpact = _gameManager.GetPowerUp();
     }
 
     private void OnParticleCollision(GameObject other)
@@ -23,7 +31,7 @@ public class BulletCollision : MonoBehaviour
             if (enemy != null)
             {
 //                Debug.Log("PAW"); // Suponiendo que el enemigo tiene un método para recibir daño
-                enemy.SetDamage(multiplicatorDamage);
+                enemy.SetDamage(powerImpact);
             }
         }
     }

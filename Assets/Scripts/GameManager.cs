@@ -13,15 +13,39 @@ public class GameManager : MonoBehaviour
     private TextMeshProUGUI allyText;
     
     private float lifePoints;
+    private int powerUps;
+    private bool powerAble;
 
     public Slider lifeScore;
 
     
     void Start()
     {
+        powerUps = 1;
         lifePoints = 100;
         ChangeLife();
         ChangeAllyText(FindObjectsOfType<NavigationAlly>().Length);
+        powerAble = false;
+    }
+
+    public void SetPowerUp()
+    {
+        powerUps += 1;
+    }
+
+    public void SetAblePowerUp(bool active)
+    {
+        powerAble = active;
+    }
+
+    public bool GetAblePowerUp()
+    {
+        return powerAble;
+    }
+
+    public int GetPowerUp()
+    {
+        return powerUps;
     }
 
     public float GetLifePoint()

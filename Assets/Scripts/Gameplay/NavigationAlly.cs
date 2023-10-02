@@ -30,6 +30,7 @@ public class NavigationAlly : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
+        _gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
         secondTouch = false;
         SetPosition();
         animator = GetComponent<Animator>();
@@ -102,7 +103,8 @@ public class NavigationAlly : MonoBehaviour
         isAbleToMove = order == FindObjectsOfType<NavigationAlly>().Length;
         if (isAbleToMove)
         {
-            if (Input.GetMouseButtonDown(1) && !isMovingToPowerUp) // Verificar si se presionó el botón derecho del mouse
+            
+            if (_gameManager.GetAblePowerUp() && Input.GetMouseButtonDown(1) && !isMovingToPowerUp) // Verificar si se presionó el botón derecho del mouse
             {
                 DeactiveAnimations();
                 DeactivePresidentAnimations();
@@ -112,6 +114,7 @@ public class NavigationAlly : MonoBehaviour
                 isMovingToPowerUp = true;
                 powerUp = GameObject.FindGameObjectWithTag("Powerup").transform;
                 destination = powerUp.position;
+                _gameManager.SetAblePowerUp(false);
             }
             if (isMovingToPowerUp && powerUpCatched)
             {
@@ -141,6 +144,8 @@ public class NavigationAlly : MonoBehaviour
             DeactivePresidentAnimations();
             presidentAnimator.SetBool("Talk", true);
             StartCoroutine(MoveToBase());
+            _gameManager.SetPowerUp();
+            Destroy(other.gameObject);
         }
     }
 
@@ -157,7 +162,6 @@ public class NavigationAlly : MonoBehaviour
     private IEnumerator DestroyAfterDelay()
     {
         yield return new WaitForSeconds(1.7f); // Esperar 2 segundos
-        _gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
 //        Debug.Log("Ally Catch");
         _gameManager.ChangeAllyText(order-1);
         Destroy(gameObject);

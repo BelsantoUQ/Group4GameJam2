@@ -14,20 +14,31 @@ public class SpawnManagerSphere : MonoBehaviour
     [SerializeField] private float spawnRangeZMax;
     [SerializeField] private float timeForNextWave=1.8f;
     
+    [SerializeField] private GameObject[] powerUps;
+    
+    
     private float spawnPosX;
     private float spawnPosZ;
     private int waveCount;
     private bool spawnValidation;
+    private GameManager _gameManager;
     
     // Start is called before the first frame update
     void Start()
     {
         waveCount = 0;
         spawnValidation = true;
+        _gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
     }
 
     private void SpawnNewWave(int enemiesToSpawn)
     {
+        if (FindObjectsOfType<PowerUpControl>().Length==0)
+        {
+            _gameManager.SetAblePowerUp(true);
+            GameObject newObject = powerUps[Random.Range(1, 4)];
+            Instantiate(newObject, newObject.transform.position, newObject.transform.rotation);
+        }
         for (int i = 0; i < enemiesToSpawn; i++)
         {
             enemyCount = i;
@@ -55,15 +66,12 @@ public class SpawnManagerSphere : MonoBehaviour
                 Destroy(obj);
             }
             waveCount += 1;
-            
-            
             spawnValidation = false;
             StartCoroutine(WaveSpawnAfterDelay(timeForNextWave));
         }
     }
     
     // Corutina que se inicia después de un retraso de 1.8 segundos
-    
     private IEnumerator WaveSpawnAfterDelay(float delay)
     {
         yield return new WaitForSeconds(delay);
