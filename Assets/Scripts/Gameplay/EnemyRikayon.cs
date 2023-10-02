@@ -12,7 +12,7 @@ public class EnemyRikayon : MonoBehaviour
     private bool isRunning = false;
     private int move = 2;
     private GameManager _gameManager;
-    private BloodEffect bloodEffect;
+    //private BloodEffect bloodEffect;
 
     private void Start()
     {
