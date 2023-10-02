@@ -143,9 +143,9 @@ public class NavigationAlly : MonoBehaviour
             animator.SetBool("Pick"+Random.Range(1,3), true);
             DeactivePresidentAnimations();
             presidentAnimator.SetBool("Talk", true);
-            StartCoroutine(MoveToBase());
             _gameManager.SetPowerUp();
             Destroy(other.gameObject);
+            StartCoroutine(MoveToBase());
         }
     }
 

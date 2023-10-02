@@ -72,10 +72,7 @@ public class GameManager : MonoBehaviour
     {
 //        Debug.Log("Allies : "+allies);
         allyText.text = "" + allies;
-        if (FindObjectsOfType<PowerUpControl>().Length == 0)
-        {
-            powerAble = true;
-        }
+        
     }
 
 }
