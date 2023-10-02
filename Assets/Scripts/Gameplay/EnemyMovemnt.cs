@@ -21,7 +21,6 @@ public class EnemyMovemnt : MonoBehaviour
 
     private void Start()
     {
-        lifePoints = 100f;
         mainTurret = GameObject.Find("MainTurret").transform;
         rikayon.GetComponent<EnemyRikayon>().SetRunning(running);
         auxSpeed = moveSpeed;

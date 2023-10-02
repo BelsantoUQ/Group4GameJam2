@@ -15,6 +15,7 @@ public class SpawnManagerSphere : MonoBehaviour
     [SerializeField] private float timeForNextWave=1.8f;
     
     [SerializeField] private GameObject[] powerUps;
+    [SerializeField] private GameObject boss;
     
     
     private float spawnPosX;
@@ -39,10 +40,16 @@ public class SpawnManagerSphere : MonoBehaviour
             GameObject newObject = powerUps[Random.Range(1, 4)];
             Instantiate(newObject, newObject.transform.position, newObject.transform.rotation);
         }
+        
         for (int i = 0; i < enemiesToSpawn; i++)
         {
             enemyCount = i;
             Instantiate(enemyPrefab, GenerateSpawnPosition(), enemyPrefab.transform.rotation);
+        }
+        
+        if (enemiesToSpawn % 4 == 0)
+        {
+            Instantiate(boss, boss.transform.position, boss.transform.rotation);
         }
     }
 

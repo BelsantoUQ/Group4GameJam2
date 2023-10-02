@@ -4818,6 +4818,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   multiplicatorDamage: 1
+  particleColors:
+  - {r: 0.14201002, g: 1, b: 0.06132078, a: 1}
+  - {r: 0.6886792, g: 0, b: 0.6530941, a: 0}
+  - {r: 1, g: 0.68882424, b: 0, a: 0}
+  - {r: 0.7924528, g: 0.011213934, b: 0.011213934, a: 0}
+  - {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &3637612077786923285
 GameObject:
   m_ObjectHideFlags: 0
@@ -9636,6 +9642,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   multiplicatorDamage: 1
+  particleColors:
+  - {r: 0.14201002, g: 1, b: 0.06132078, a: 1}
+  - {r: 0.6886792, g: 0, b: 0.6530941, a: 0}
+  - {r: 1, g: 0.68882424, b: 0, a: 0}
+  - {r: 0.7924528, g: 0.011213934, b: 0.011213934, a: 0}
+  - {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &3668153448304192810
 GameObject:
   m_ObjectHideFlags: 0
@@ -14671,6 +14683,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   multiplicatorDamage: 1
+  particleColors:
+  - {r: 0.14201002, g: 1, b: 0.06132078, a: 1}
+  - {r: 0.6886792, g: 0, b: 0.6530941, a: 0}
+  - {r: 1, g: 0.68882424, b: 0, a: 0}
+  - {r: 0.7924528, g: 0.011213934, b: 0.011213934, a: 0}
+  - {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &5975444790174675740
 GameObject:
   m_ObjectHideFlags: 0
@@ -19489,3 +19507,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   multiplicatorDamage: 1
+  particleColors:
+  - {r: 0.14201002, g: 1, b: 0.06132078, a: 1}
+  - {r: 0.6886792, g: 0, b: 0.6530941, a: 0}
+  - {r: 1, g: 0.68882424, b: 0, a: 0}
+  - {r: 0.7924528, g: 0.011213934, b: 0.011213934, a: 0}
+  - {r: 0, g: 0, b: 0, a: 0}

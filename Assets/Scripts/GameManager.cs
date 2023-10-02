@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -18,8 +19,7 @@ public class GameManager : MonoBehaviour
 
     public Slider lifeScore;
 
-    
-    void Start()
+    private void Start()
     {
         powerUps = 1;
         lifePoints = 100;
@@ -27,7 +27,12 @@ public class GameManager : MonoBehaviour
         ChangeAllyText(FindObjectsOfType<NavigationAlly>().Length);
         powerAble = false;
     }
-
+    
+    private void Update()
+    {
+        powerAble = FindObjectsOfType<PowerUpControl>().Length != 0;
+    }
+    
     public void SetPowerUp()
     {
         powerUps += 1;
